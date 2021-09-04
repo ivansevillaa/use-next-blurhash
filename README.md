@@ -4,15 +4,19 @@ useNextBlurhash is a custom hook that from a [blurhash](https://blurha.sh/) stri
 
 To get more context I recommend you [read this.](https://nextjs.org/blog/next-11#image-placeholders) 
 
-## Installation
+## Requeriments
 
-You need at least Next.js 11
+You need at least Next.js 11.
+
+## Installation
 
 ```bash
 npm install use-next-blurhash
+```
 
 or
 
+```
 yarn add use-next-blurhash
 ```
 
