@@ -53,6 +53,14 @@ export default function Something(props) {
 }
 ```
 
+## Config to deploy with Vercel
+If you deploy with Vercel, you may have an error something like this: `version `ZLIB_1.2.9' not found`
+You can fix it following [this steps](https://github.com/ivansevillaa/use-next-blurhash/issues/4)
+
+Also, you can check the original issue and solution to understand what is going on
+[Ref to the original issue](https://github.com/Automattic/node-canvas/issues/1779)
+[Ref to the original solution](https://github.com/Automattic/node-canvas/issues/1779#issuecomment-895885846)
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
