@@ -1,5 +1,6 @@
 import { decode } from "blurhash";
 import { createCanvas } from "canvas";
+import { useEffect } from 'react';
 
 export default function useBlurData(
   blurHash: string,
@@ -7,13 +8,16 @@ export default function useBlurData(
   height: number = 120,
   punch?: number
 ) {
-  const pixels = decode(blurHash, width, height, punch);
-  const canvas = createCanvas(width, height);
-  const ctx = canvas.getContext("2d");
-  const imageData = ctx.createImageData(width, height);
-  imageData.data.set(pixels);
-  ctx.putImageData(imageData, 0, 0);
-  const blurDataUrl = canvas.toDataURL();
+  let pixels, canvas, ctx, imageData, blurDataUrl;
+  useEffect(() => {
+    pixels = decode(blurHash, width, height, punch);
+    canvas = createCanvas(width, height);
+    ctx = canvas.getContext("2d");
+    imageData = ctx.createImageData(width, height);
+    imageData.data.set(pixels);
+    ctx.putImageData(imageData, 0, 0);
+    blurDataUrl = canvas.toDataURL();
+  }, [])
 
   return [blurDataUrl];
 }
