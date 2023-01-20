@@ -6,5 +6,5 @@ export default function useBlurData(
   height: number = 120,
   punch?: number
 ) {
-  return blurHashToDataURL(blurHash, width, height, punch);
+  return [blurHashToDataURL(blurHash, width, height, punch)];
 }
